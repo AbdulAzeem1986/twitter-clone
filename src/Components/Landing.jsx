@@ -1,15 +1,16 @@
 import React, { useState } from 'react'
 import Logo from '../Images/Logo.jpg'
 import { useNavigate } from 'react-router-dom'
-import './Style.css'
+import "./Landing.css"
+
 
 function Landing() {
-  const [showSignIn, setShowSignIn] = useState(false);
+  // const [showSignIn, setShowSignIn] = useState(false);
 let Navigate = useNavigate();
 
-// const sign = ()=>{
-//   Navigate("/signin")
-// }
+const sign = ()=>{
+  Navigate("/signin")
+}
 
   return (
     <div className="container">
@@ -23,16 +24,16 @@ let Navigate = useNavigate();
             <h3 className='mb-4'>Join today</h3>
 
             <div>
-        <button className='btn btn-outline-dark btn-rounded mb-3 '>Sign up with google</button>
+        <button className='btn btn-outline-dark btn-rounded mb-3 button'>Sign up with google</button>
             <br />
-            <button className='btn btn-outline-dark mb-2 flex'>Sign up with Apple</button>
+            <button className='btn btn-outline-dark mb-2 flex button'>Sign up with Apple</button>
 
             <h6>or</h6>
-            <button className='btn btn-primary'>Create account</button>
-            <p style={{width:"60%"}} className='clause'>By signing up, you agree to the Terms of Service and Privacy Policy, including Cookie Use.</p>
+            <button className='btn btn-primary button'>Create account</button>
+            <p style={{width:"60%"}} className='clause'>By signing up, you agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>, including <a href="#">Cookie Use</a>.</p>
 
             <p>Already have an account?</p>
-            <button  className='btn btn-outline-secondary text-primary'>Sign in</button>
+            <button onClick={sign}  className='btn btn-outline-secondary text-primary button'>Sign in</button>
             </div>
         </div>
         </div>

@@ -2,9 +2,6 @@ import React, { useState } from 'react'
 import Logo from '../Images/Logo.jpg'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
-import "./Signin.css"
-import AppleIcon from '@material-ui/icons/Apple';
-
 
 function Signin() {
 
@@ -28,7 +25,7 @@ function Signin() {
 
     const validate = async () => {
    
-            var Data = await axios.post(`http://localhost:3001/signin`, data)
+            var Data = await axios.post(`/api/signin`, data)
               .then(
                 (res) => {
                   if (res.data.status == "success") {
@@ -61,17 +58,17 @@ function Signin() {
     <div className="row g-2">
     
     
-    <div className='logo text-center mb-4 col'>
-        <img src={Logo} alt='logo' />
+    <div  className="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 text-center mt-3">
+        <img className='flex' width={"20%"} height={"40%"} src={Logo} alt='logo' />
    </div>
 
 
-    <div className="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
-        <h3 className='mb-3'>Sign in to X</h3>
+    <div className="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 mt-3">
+        <h1 className='mb-5'>Sign in to X</h1>
         
-        <button type='button' className='btn link btn-outline-dark mb-3'>Sign up with google</button>
+        <button className='btn btn-outline-dark btn-rounded mb-3' style={{width:"100%"}}>Sign up with google</button>
         <br />
-        <button type='button' className='btn link btn-outline-dark mb-2'><AppleIcon/>Sign up with Apple</button>
+        <button type='button' className='btn btn-outline-dark mb-2' style={{width:"100%"}}>Sign up with Apple</button>
 
         <h6>or</h6>
     </div>
@@ -99,7 +96,7 @@ function Signin() {
                 <button onClick={validate} className="btn bg-dark bg-opacity-75 text-light" style={{ width: '100%' }}>Login</button>
               </div>
         <div className='mt-5'>
-        <p>Don't have an account? <a href="#">Signup</a></p>
+        <p>Don't have an account? <a href="/signup">Signup</a></p>
         
         </div> 
         

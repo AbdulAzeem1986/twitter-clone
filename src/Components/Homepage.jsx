@@ -1,8 +1,21 @@
-import React from 'react'
+import React from 'react';
+import "./Homepage.css"
+import Sidebar from './Sidebar';
+import Feed from "./Feed";
+
+
+
 
 function Homepage() {
   return (
-    <div>Homepage</div>
+    <div className='homepage'>
+      
+       <Sidebar/>
+       <Feed/>
+       
+     
+      
+    </div>
   )
 }
 
