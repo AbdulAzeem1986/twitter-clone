@@ -1,0 +1,35 @@
+.postbtn{
+display: flex;
+margin-top: 5px;
+}
+
+.tweetBox>form{
+    display: flex;
+    flex-direction: column;
+}
+
+.tweetBox--input{
+    display: flex;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.tweetBox--input>input{
+    flex: 1;
+    margin-left: 20px;
+    font-size: 20px;
+    border: none;
+}
+
+.postbtn {
+    float: right;
+    align-items: center;
+    background-color: rgb(11, 185, 243);
+    border: none !important;
+    font-weight: 700 !important;
+    border-radius: 20px !important;
+    width: 80px;
+    height: 40px !important;
+    margin-left: auto !important;
+    text-align: center;
+      }

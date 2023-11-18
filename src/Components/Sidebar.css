@@ -1,10 +1,11 @@
 .sidebar {
   border-right: 1px solid rgb(31, 176, 186);
-  flex:0.3;
+  flex:0.25;
   min-width: 250px;
   margin-top: 20px;
   padding-left: 20px;
   padding-right: 20px;
+  overflow-y: scroll;
 }
 
 .sidebar__twitterIcon {
@@ -15,7 +16,7 @@
 }
 
 .sidebar__tweet {
-  background-color: rgb(31, 176, 186) !important;
+  background-color: rgb(11, 185, 243) !important;
   border: none !important;
   color: white !important;
   font-weight: 900 !important;
@@ -23,4 +24,15 @@
   border-radius: 30px !important;
   height: 50px !important;
   margin-top: 20px !important;
+}
+
+img{
+  margin-left: 20px;
+}
+
+.signoutbtn{
+  margin-top: 20px;
+  border: none;
+  margin-left: 10px;
+  background-color: white;
 }

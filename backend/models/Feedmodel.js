@@ -1,18 +1,22 @@
+const { Gif } = require("@material-ui/icons");
 const Mongoose = require("mongoose");
 
 const feedSchema = Mongoose.Schema({
-    
-       username:{
+        name:{
+        type:String,
+        required:[true,"Name"]},
+
+        username:{
             type:String,
-            required:[true,"Name"]},
+            required:[true,"username"]},
     
         userId:{
                     type:String,
                     required:[true,"userId"]},
             
         Feed:{
-                    type:String,
-                    required:[true,"Please select the project"]},
+                    type:String || String && Image || String && Gif || Image,
+                    required:[true,"Feed"]}
        
         },
         {

@@ -2,7 +2,10 @@ const express = require ("express");
 const bodyparser = require("body-parser");
 const cors = require("cors");
 const mongoose = require("mongoose");
-const {Usermodel}= require("./models/Usermodel")
+const jwt = require("jsonwebtoken");
+const bcrypt = require("bcrypt");
+const {Usermodel}= require("./models/Usermodel");
+const Feedmodel = require("./models/Feedmodel");
 
 const app = new express;
 
@@ -10,6 +13,7 @@ app.use(bodyparser.json());
 app.use(cors());
 
 mongoose.connect("mongodb+srv://abdulazeem:abdulazeem86@cluster0.qch7vjx.mongodb.net/tweets?retryWrites=true&w=majority",{useNewUrlParser:true})
+
 
 //Api to Signin
 app.post("/signin", async (req, res) => {
@@ -30,7 +34,7 @@ app.post("/signin", async (req, res) => {
         // Token Authentication-Generate-To be included in signin
        const token = jwt.sign({ "email": email, "id": result._id }, "signin-token", { expiresIn: "1d" })
        if(!token) throw ("Token not generated")
-      console.log(result)
+    //   console.log(result)
       console.log(token)
        res.send({ "status": "success", "data":result, "token":token })
 
@@ -47,15 +51,14 @@ app.post("/signin", async (req, res) => {
 //Api to add a user
 app.post("/adduser", (req, res) => {
 
-    
-    // jwt.verify(req.body.token,"signin-token",(err,decoded)=>{
-    //     if(decoded && decoded.email){
-    //    //  console.log("authorised")
-
+    jwt.verify(req.body.token,"signin-token",(err,decoded)=>{
+        if(decoded && decoded.email){
+      
             var data = {
+                name:req.body.name,
                 username: req.body.username,
                 email: req.body.email,
-                password:req.body.password
+                password:bcrypt.hashSync(req.body.password,10)
                 }
         
             var user = new Usermodel(data);
@@ -68,7 +71,38 @@ app.post("/adduser", (req, res) => {
                 res.json({ "Status": "Error", "Error": err })
                 console.log(err);
             })
+        }
+        else{
+            console.log("Authentication error")
+        }
 
+})
+});
+
+
+//Api to add a post
+app.post("/addpost",(req,res)=>{
+
+    var data = req.body;
+    console.log(data)
+   const newPost = new Feedmodel(data)
+     newPost.save(
+    // (err,data)=>{
+    //     if (err) {
+    //        res.json({"Status":"Error", "Error":err})
+    //     } else {
+    //        res.json({"Status":"Success", "Data":data}) 
+    //     }
+    // }
+   ).then(()=>{
+    res.json({ "Status": "Post added successfully", "Data": data })
+    console.log(data);
+    
+})
+   .catch((err)=>{
+    res.json({ "Status": "Error", "Error": err })
+    console.log(err);
+})
 });
 
 

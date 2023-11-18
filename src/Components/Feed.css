@@ -1,4 +1,19 @@
 .feed {
-display: flex;
 flex: 0.4;
+border-right: 1px solid rgb(31, 176, 186);
+max-width: fit-content;
+overflow-y: scroll;
+padding: 20px;
 }
+
+.feed-header{
+    flex:content;
+    position: sticky;
+    margin-top: 0;
+    border-bottom: 1px solid grey;
+    margin: 0;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+}
+
