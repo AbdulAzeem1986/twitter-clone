@@ -9,9 +9,9 @@ import ListAltIcon from "@material-ui/icons/ListAlt";
 import PermIdentityIcon from "@material-ui/icons/PermIdentity";
 import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
 import { Avatar, Button } from "@material-ui/core";
-import SidebarOption from "./SidebarOption";
 import Logo from '../Images/Logo.jpg'
 import { useNavigate } from "react-router-dom";
+import SidebarItems from "./SidebarItems";
 
 function Sidebar() {
 
@@ -29,16 +29,16 @@ function Sidebar() {
     <div className="sidebar">
       <img className='flex logo' style={{width:"10%"}} src={Logo} alt='logo' />
       
-      <SidebarOption Icon={HomeIcon} text="Home"/>
-      <SidebarOption Icon={SearchIcon} text="Explore" />
-      <SidebarOption Icon={NotificationsNoneIcon} text="Notifications" />
-      <SidebarOption Icon={MailOutlineIcon} text="Messages" />
-      <SidebarOption Icon={BookmarkBorderIcon} text="Bookmarks" />
-      <SidebarOption Icon={ListAltIcon} text="Lists" />
-      <SidebarOption Icon={PermIdentityIcon} text="Profile" />
-      <SidebarOption Icon={MoreHorizIcon} text="More" />
+      <SidebarItems Icon={HomeIcon} text="Home"/>
+      <SidebarItems Icon={SearchIcon} text="Explore" />
+      <SidebarItems Icon={NotificationsNoneIcon} text="Notifications" />
+      <SidebarItems Icon={MailOutlineIcon} text="Messages" />
+      <SidebarItems Icon={BookmarkBorderIcon} text="Bookmarks" />
+      <SidebarItems Icon={ListAltIcon} text="Lists" />
+      <SidebarItems Icon={PermIdentityIcon} text="Profile" />
+      <SidebarItems Icon={MoreHorizIcon} text="More" />
       
-      <Button  variant="outlined" className="sidebar__tweet" fullWidth>
+      <Button  variant="outlined" className="sidebar-tweet" fullWidth>
         Tweet
       </Button>
 

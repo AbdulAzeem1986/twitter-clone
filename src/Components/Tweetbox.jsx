@@ -7,11 +7,12 @@ function Tweetbox() {
 
   const[feed,setFeed]=useState("");
 
-  var [data, setData]= useState("")
+  const [data, setData]= useState("")
 
   const inputHandler = (event)=>{
     setFeed(event.target.value)
     setData({
+      token:sessionStorage.getItem("token"),
       name:sessionStorage.getItem("name"),
       username:sessionStorage.getItem("username"),
       userId:sessionStorage.getItem("userId"),

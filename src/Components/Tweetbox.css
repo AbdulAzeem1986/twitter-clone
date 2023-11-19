@@ -1,11 +1,13 @@
-.postbtn{
-display: flex;
-margin-top: 5px;
+.tweetBox{
+    border-bottom: 1px solid rgb(236, 235, 235);
 }
+
+
 
 .tweetBox>form{
     display: flex;
     flex-direction: column;
+    margin-bottom: 20px;
 }
 
 .tweetBox--input{

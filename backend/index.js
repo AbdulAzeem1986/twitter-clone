@@ -5,7 +5,7 @@ const mongoose = require("mongoose");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 const {Usermodel}= require("./models/Usermodel");
-const Feedmodel = require("./models/Feedmodel");
+const {Feedmodel}=require("./models/Feedmodel")
 
 const app = new express;
 
@@ -35,13 +35,13 @@ app.post("/signin", async (req, res) => {
        const token = jwt.sign({ "email": email, "id": result._id }, "signin-token", { expiresIn: "1d" })
        if(!token) throw ("Token not generated")
     //   console.log(result)
-      console.log(token)
+    //   console.log(token)
        res.send({ "status": "success", "data":result, "token":token })
 
     }
      
     catch (error) {
-        console.log(error);
+        // console.log(error);
         res.send(error);
     }
 });
@@ -64,16 +64,16 @@ app.post("/adduser", (req, res) => {
             var user = new Usermodel(data);
             user.save().then(()=>{
                 res.json({ "Status": "User added successfully", "Data": data })
-                console.log(user);
-                console.log(data);
+                // console.log(user);
+                // console.log(data);
             })
             .catch((err)=>{
                 res.json({ "Status": "Error", "Error": err })
-                console.log(err);
+                // console.log(err);
             })
         }
         else{
-            console.log("Authentication error")
+            // console.log("Authentication error")
         }
 
 })
@@ -83,28 +83,55 @@ app.post("/adduser", (req, res) => {
 //Api to add a post
 app.post("/addpost",(req,res)=>{
 
+ jwt.verify(req.body.token,"signin-token",(err,decoded)=>{
+ if(decoded && decoded.email){
+
     var data = req.body;
-    console.log(data)
+    // console.log(data)
    const newPost = new Feedmodel(data)
      newPost.save(
-    // (err,data)=>{
-    //     if (err) {
-    //        res.json({"Status":"Error", "Error":err})
-    //     } else {
-    //        res.json({"Status":"Success", "Data":data}) 
-    //     }
-    // }
    ).then(()=>{
     res.json({ "Status": "Post added successfully", "Data": data })
-    console.log(data);
+    // console.log(data);
     
 })
    .catch((err)=>{
     res.json({ "Status": "Error", "Error": err })
-    console.log(err);
+    // console.log(err);
+})
+}
 })
 });
 
+
+// //Api to view the posts
+// app.get("/home", (req,res)=>{
+
+//  jwt.verify(req.body.token,"signin-token",async(err,decoded)=>{
+//         if(decoded && decoded.email){
+//     try {
+//         var result = await Feedmodel.find({"userId":req.body.userId});
+//         res.send(result);
+//         console.log(result);
+//     } catch (error) {
+//         res.status(500).send(error);
+//          }
+//      }
+ 
+// })
+// });
+
+app.get("/viewpost", async(req,res)=>{
+
+    try {
+       var result = await Feedmodel.find({"userId":req.body.userId});
+       await res.send(result);
+    console.log(result)
+   } catch (error) {
+    console.log(error)
+       res.status(500).send(error);
+        }
+    })
 
 
 app.listen(3001, (err)=>{

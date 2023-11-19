@@ -2,7 +2,8 @@ import React, { useState } from 'react'
 import "./Feed.css"
 import SettingsIcon from '@material-ui/icons/Settings';
 import Tweetbox from './Tweetbox';
-import Post from './Post';
+import Viewpost from './Viewpost';
+
 
 
 function Feed() {
@@ -21,8 +22,7 @@ function Feed() {
         </div>
       </div>
       <Tweetbox/>
-      <Post displayName={"Azeem"}
-/>
+      <Viewpost/>
       
     </div>
 

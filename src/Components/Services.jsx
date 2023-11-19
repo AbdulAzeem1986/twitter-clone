@@ -1,5 +1,7 @@
 import React from 'react'
 import "./Services.css"
+import { Avatar } from '@material-ui/core'
+
 // import {
 //   TwitterTimelineEmbed,
 //   TwitterShareButton,
@@ -9,27 +11,28 @@ import SearchIcon from "@material-ui/icons/Search";
 
 function Services() {
   return (
-    <div className="widgets">
-      <div className="widgets__input">
-        <SearchIcon className="widgets__searchIcon" />
+    <div className="services">
+      <div className="services-input">
+        <SearchIcon className="services-searchIcon" />
         <input placeholder="Search Twitter" type="text" />
       </div>
 
-      <div className="widgets__widgetContainer">
+      <div>
+        <h4>Subscribe to Premium</h4>
+        <p>Subscribe to unlock new features and if eligible, receive a share of ads revenue</p>
+        <button className="btn btn-dark">Subscribe</button>
+      </div>
+      <div className='Services-follow'>
+        <h4>Who to follow</h4>
+        <div className='Services-user'>
+        <Avatar className='m-2'/>
+        <p className='m-2'>username</p>
+        </div>
+        <button className="btn btn-dark">Follow</button>
+      </div>
+
+      <div className="services-services">
         <h2>What's happening</h2>
-
-        {/* <TwitterTweetEmbed tweetId={"858551177860055040"} /> */}
-
-        {/* <TwitterTimelineEmbed
-          sourceType="profile"
-          screenName="cleverqazi"
-          options={{ height: 400 }}
-        /> */}
-
-        {/* <TwitterShareButton
-          url={"https://facebook.com/cleverprogrammer"}
-          options={{ text: "#reactjs is awesome", via: "cleverqazi" }}
-        /> */}
       </div>
     </div>
   )
