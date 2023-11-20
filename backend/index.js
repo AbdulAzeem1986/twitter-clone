@@ -121,12 +121,13 @@ app.post("/addpost",(req,res)=>{
 // })
 // });
 
-app.get("/viewpost", async(req,res)=>{
+app.post("/viewpost", async(req,res)=>{
 
     try {
        var result = await Feedmodel.find({"userId":req.body.userId});
-       await res.send(result);
-    console.log(result)
+       res.json(result);
+       console.log(req.body.userId)
+        console.log(result)
    } catch (error) {
     console.log(error)
        res.status(500).send(error);
