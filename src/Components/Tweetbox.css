@@ -1,26 +1,30 @@
-.tweetBox{
+.tweetBox {
     border-bottom: 1px solid rgb(236, 235, 235);
 }
 
 
 
-.tweetBox>form{
+.tweetBox>form {
     display: flex;
     flex-direction: column;
     margin-bottom: 20px;
 }
 
-.tweetBox--input{
+.tweetBox--input {
     display: flex;
     padding-top: 30px;
     padding-bottom: 30px;
+    
 }
 
-.tweetBox--input>input{
+.tweetBox--input>input {
     flex: 1;
     margin-left: 20px;
     font-size: 20px;
     border: none;
+}
+.tweetBox--input>input:focus{
+    outline: none;
 }
 
 .postbtn {
@@ -34,4 +38,4 @@
     height: 40px !important;
     margin-left: auto !important;
     text-align: center;
-      }
+}

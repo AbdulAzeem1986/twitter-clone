@@ -15,7 +15,7 @@ const feedSchema = Mongoose.Schema({
                     required:[true,"userId"]},
             
         Feed:{
-                    type:String || String && Image || String && Gif || Image,
+                    type:String,
                     required:[true,"Feed"]}
        
         },

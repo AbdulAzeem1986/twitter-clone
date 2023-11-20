@@ -9,14 +9,12 @@
   background-color: #e8f5fe;
   border-radius: 30px;
   color: var(--twitter-color);
-  }
+}
 
 
-.sidebaritems > h2 {
+.sidebaritems>h2 {
   font-weight: 400;
   font-size: 23px;
   margin-right: 20px;
   padding: 15px;
 }
-
-

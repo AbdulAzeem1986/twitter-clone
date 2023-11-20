@@ -4,7 +4,6 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Signin from './Components/Signin';
 import Homepage from './Components/Homepage';
 import Landing from './Components/Landing';
-import Viewpost from './Components/Viewpost';
 
 function App() {
   return (
@@ -14,8 +13,7 @@ function App() {
           <Route path='/' exact element={<Landing/>}/>;
           <Route path='/signin' exact element = {<Signin/>}/>;
           <Route path='/home' exact element={<Homepage/>}/>;
-          <Route path='/viewpost' exact element={<Viewpost/>}/>
-        </Routes>
+          </Routes>
       
       </BrowserRouter>
      

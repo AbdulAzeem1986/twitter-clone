@@ -1,9 +1,11 @@
 .feed {
-flex: 0.45;
-border-right: 1px solid rgb(236, 235, 235);
-min-width:350px;
-overflow-y: scroll;
-padding: 20px;
+    flex: 0.45;
+    border-right: 1px solid rgb(236, 235, 235);
+    min-width: 350px;
+    overflow-y: scroll;
+    padding: 20px;
 }
 
-
+.feed::-webkit-scrollbar {
+    display: none;
+  }

@@ -25,8 +25,8 @@ function Services() {
       <div className='Services-follow'>
         <h4>Who to follow</h4>
         <div className='Services-user'>
-        <Avatar className='m-2'/>
-        <p className='m-2'>username</p>
+          <Avatar className='m-2' />
+          <p className='m-2'>username</p>
         </div>
         <button className="btn btn-dark">Follow</button>
       </div>

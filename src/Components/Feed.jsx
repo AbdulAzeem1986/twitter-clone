@@ -11,10 +11,10 @@ function Feed() {
   return (
     <div className='feed'>
 
-      <Feedheader/>
-      <Tweetbox/>
-      
-      
+      <Feedheader />
+      <Tweetbox />
+      <Viewpost />
+
     </div>
   )
 }

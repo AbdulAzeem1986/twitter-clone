@@ -26,22 +26,22 @@ app.post("/signin", async (req, res) => {
         
         if (!result) throw ('username not found')
 
-        //Comparing given password & encrypted password in DB
+        
         const passwordValidator = bcrypt.compareSync(password, result.password)
 
         if (!passwordValidator) throw ({ "status": "failed", "data": "invalid password" })
 
-        // Token Authentication-Generate-To be included in signin
+        // Token Authentication
        const token = jwt.sign({ "email": email, "id": result._id }, "signin-token", { expiresIn: "1d" })
        if(!token) throw ("Token not generated")
-    //   console.log(result)
-    //   console.log(token)
+      console.log(result)
+      console.log(token)
        res.send({ "status": "success", "data":result, "token":token })
 
     }
      
     catch (error) {
-        // console.log(error);
+        console.log(error);
         res.send(error);
     }
 });
@@ -73,7 +73,8 @@ app.post("/adduser", (req, res) => {
             })
         }
         else{
-            // console.log("Authentication error")
+            res.json("Authentication error")
+            console.log("Authentication error")
         }
 
 })

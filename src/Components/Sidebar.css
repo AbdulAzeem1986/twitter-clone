@@ -1,8 +1,8 @@
 .sidebar {
   border-right: 1px solid rgb(236, 235, 235);
-  flex:0.25;
+  flex: 0.25;
   min-width: 150px;
-  margin-top: 20px;
+  margin-top: 10px;
   padding-left: 20px;
   padding-right: 20px;
   overflow-y: scroll;
@@ -19,11 +19,12 @@
   margin-top: 20px !important;
 }
 
-img{
+img {
   margin-left: 20px;
+  margin-bottom: 20px;
 }
 
-.signoutbtn{
+.signoutbtn {
   margin-top: 20px;
   border: none;
   margin-left: 5px;

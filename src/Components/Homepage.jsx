@@ -10,14 +10,14 @@ import Services from './Services';
 function Homepage() {
   return (
     <div className='home'>
-      
-       <Sidebar/>
-       <Feed/>
-       <Services/>
-       
-       
-     
-      
+
+      <Sidebar />
+      <Feed />
+      <Services />
+
+
+
+
     </div>
   )
 }

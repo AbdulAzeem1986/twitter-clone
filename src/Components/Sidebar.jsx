@@ -17,7 +17,7 @@ function Sidebar() {
 
   let Navigate = useNavigate();
 
-  const signout = ()=>{
+  const signout = () => {
     sessionStorage.removeItem("token");
     sessionStorage.removeItem("userId");
     sessionStorage.removeItem("username");
@@ -27,9 +27,10 @@ function Sidebar() {
 
   return (
     <div className="sidebar">
-      <img className='flex logo' style={{width:"10%"}} src={Logo} alt='logo' />
-      
-      <SidebarItems Icon={HomeIcon} text="Home"/>
+
+      <img className='flex logo' style={{ width: "10%" }} src={Logo} alt='logo' />
+
+      <SidebarItems Icon={HomeIcon} text="Home" />
       <SidebarItems Icon={SearchIcon} text="Explore" />
       <SidebarItems Icon={NotificationsNoneIcon} text="Notifications" />
       <SidebarItems Icon={MailOutlineIcon} text="Messages" />
@@ -37,12 +38,12 @@ function Sidebar() {
       <SidebarItems Icon={ListAltIcon} text="Lists" />
       <SidebarItems Icon={PermIdentityIcon} text="Profile" />
       <SidebarItems Icon={MoreHorizIcon} text="More" />
-      
-      <Button  variant="outlined" className="sidebar-tweet" fullWidth>
+
+      <Button variant="outlined" className="sidebar-tweet" fullWidth>
         Tweet
       </Button>
 
-      <button className="signoutbtn" onClick={signout}><Avatar/></button>
+      <button className="signoutbtn" onClick={signout}><Avatar /></button>
 
     </div>
   );

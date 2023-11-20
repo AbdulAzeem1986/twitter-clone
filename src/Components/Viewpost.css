@@ -1,47 +1,18 @@
-.post {
-    display: flex;
-    border-bottom: 1px solid var(--twitter-background);
-    padding-bottom: 10px;
-  }
-  
-  .post__body {
-    flex: 1;
-    padding: 10px;
-  }
-  
-  .post__body > img {
-    border-radius: 20px;
-    width: 100%;
-  }
-  
-  .post__footer {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
-  }
-  
-  .post__headerDescription {
-    margin-bottom: 10px;
-    font-size: 15px;
-  }
-  
-  .post__headerText > h3 {
-    font-size: 15px;
-    margin-bottom: 5px;
-  }
-  
-  .post__badge {
-    font-size: 14px !important;
-    color: var(--twitter-color);
-  }
-  
-  .post__headerSpecial {
-    font-weight: 600;
-    font-size: 12px;
-    color: gray;
-  }
+.post-body {
+  margin-top: 20px;
+}
 
-  .dash{
-    margin-top: 20px;
-  }
-  
+.post-items {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgb(236, 235, 235);
+}
+
+.postbody-title {
+  display: flex;
+}
+
+.postbody-title>h5 {
+  font-size: 17px;
+  font-weight: 500;
+}

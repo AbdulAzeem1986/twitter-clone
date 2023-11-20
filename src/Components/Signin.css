@@ -1,19 +1,23 @@
-h6{
+h6 {
     text-align: center;
     font-size: medium;
     font-weight: 400;
 }
 
-.link{
-    width: 100%;    
+.link {
+    width: 100%;
 }
 
-img{
-width: 10%;
-margin-top: 20px;
+img {
+    width: 10%;
+    margin-top: 20px;
 }
 
-.logo{
+.logo {
     align-items: center;
+}
+
+.gbtn>button{
+    border-radius: 20px;
 }
 
