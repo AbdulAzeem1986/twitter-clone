@@ -1,6 +1,6 @@
 .sidebar {
   border-right: 1px solid rgb(236, 235, 235);
-  flex: 0.25;
+  flex: 0.2;
   min-width: 150px;
   margin-top: 10px;
   padding-left: 20px;
@@ -25,8 +25,14 @@ img {
 }
 
 .signoutbtn {
+  display:inline-flex;
   margin-top: 20px;
   border: none;
   margin-left: 5px;
   background-color: white;
+}
+
+.signoutbtn:hover{
+  background-color: rgb(244, 240, 240);
+  border-radius: 20px;
 }

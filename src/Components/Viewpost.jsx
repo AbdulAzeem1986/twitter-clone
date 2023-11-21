@@ -1,6 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import "./Viewpost.css";
 import axios from 'axios';
+import ChatBubbleOutlineRoundedIcon from '@material-ui/icons/ChatBubbleOutlineRounded';
+import FavoriteBorderRoundedIcon from '@material-ui/icons/FavoriteBorderRounded';
+import EqualizerTwoToneIcon from '@material-ui/icons/EqualizerTwoTone';
+import BookmarkBorderOutlinedIcon from '@material-ui/icons/BookmarkBorderOutlined';
+import PublishOutlinedIcon from '@material-ui/icons/PublishOutlined';
 
 
 
@@ -41,7 +46,18 @@ function Viewpost() {
                   <div className='postbody-title'>
                     <h5>{value.name}</h5>@<p>{value.username}</p>
                   </div>
-                  <p >{value.Feed}</p>
+                  <div className='myfeeds'>
+                  <p>{value.Feed}</p>
+                  <div className='icons'>
+                  <div className='feeds-icon'><ChatBubbleOutlineRoundedIcon fontSize='inherit'/></div>
+                  <div className='feeds-icon'><FavoriteBorderRoundedIcon fontSize='inherit'/></div>
+                  <div className='feeds-icon'><EqualizerTwoToneIcon fontSize='inherit'/></div>
+                  <div className='feeds-icon'><BookmarkBorderOutlinedIcon fontSize='inherit'/></div>
+                  <div className='feeds-icon'><PublishOutlinedIcon fontSize='inherit'/></div>
+
+
+                  </div>
+                  </div>
                 </div>
               </div>
             }

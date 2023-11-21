@@ -1,6 +1,13 @@
 import React, { useState } from 'react'
 import "./Tweetbox.css"
 import { Avatar } from '@material-ui/core'
+import BrokenImageOutlinedIcon from '@material-ui/icons/BrokenImageOutlined';
+import GifSharpIcon from '@material-ui/icons/GifSharp';
+import FormatListBulletedSharpIcon from '@material-ui/icons/FormatListBulletedSharp';
+import SentimentSatisfiedOutlinedIcon from '@material-ui/icons/SentimentSatisfiedOutlined';
+import ScheduleOutlinedIcon from '@material-ui/icons/ScheduleOutlined';
+import RoomOutlinedIcon from '@material-ui/icons/RoomOutlined';
+
 import axios from 'axios';
 
 function Tweetbox() {
@@ -51,7 +58,18 @@ function Tweetbox() {
           <Avatar />
           <input onChange={inputHandler} type="text" placeholder="What's happening?" />
         </div>
+
+        <div className='tweetbox-icons'>
+          <span><BrokenImageOutlinedIcon/></span>
+          <span><GifSharpIcon/></span>
+          <span><FormatListBulletedSharpIcon/></span>
+          <span><ScheduleOutlinedIcon/></span>
+          <span><SentimentSatisfiedOutlinedIcon/></span>
+          <span><RoomOutlinedIcon/></span>
+          
+       
         <button onClick={addPost} className='btn btn-primary postbtn'>Post</button>
+        </div>
       </form>
 
     </div>

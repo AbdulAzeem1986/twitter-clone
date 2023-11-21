@@ -39,3 +39,15 @@
     margin-left: auto !important;
     text-align: center;
 }
+
+.tweetbox-icons{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+    margin-left: 10px;
+    color: var(--twitter-color);
+}
+
+span{
+    width:30px;
+}

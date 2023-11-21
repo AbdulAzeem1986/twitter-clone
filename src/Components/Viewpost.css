@@ -16,3 +16,21 @@
   font-size: 17px;
   font-weight: 500;
 }
+
+.myfeeds {
+  text-align: left;
+}
+
+.icons {
+  display: flex;
+}
+
+.feeds-icon {
+  width: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  padding-top: 10px;
+  color: rgb(179, 177, 177);
+}

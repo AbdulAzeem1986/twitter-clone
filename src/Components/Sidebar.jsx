@@ -43,7 +43,7 @@ function Sidebar() {
         Tweet
       </Button>
 
-      <button className="signoutbtn" onClick={signout}><Avatar /></button>
+      <button className="signoutbtn" onClick={signout}><Avatar /> Logout @{sessionStorage.getItem("username")}</button>
 
     </div>
   );

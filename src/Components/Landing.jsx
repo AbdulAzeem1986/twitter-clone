@@ -15,8 +15,8 @@ function Landing() {
   return (
     <div className="container">
       <div className="row">
-        <div className="col col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 text-center mt-5">
-          <img className='flex logo' style={{ width: "60%" }} src={Logo} alt='logo' />
+        <div className="col col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 logo mt-5">
+          <img style={{ width: "60%"}} src={Logo} alt='logo' />
         </div>
 
         <div className="col col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 mt-5">

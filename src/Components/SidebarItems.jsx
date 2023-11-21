@@ -1,7 +1,7 @@
 import React from 'react'
 import "./SidebarItems.css"
 
-function SidebarItems({ active, Icon, text }) {
+function SidebarItems({ Icon, text }) {
   return (
     <div className={"sidebaritems"}>
 
