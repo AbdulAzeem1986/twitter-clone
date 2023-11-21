@@ -32,6 +32,15 @@ function Viewpost() {
     }
   };
 
+  const datetohours= (dateString)=>{
+    const timestamp = dateString;
+const dateObject = new Date(timestamp);
+
+// Extracting time portion (hours, minutes, seconds)
+const hours = dateObject.getUTCHours();
+return hours
+  }
+
   return (
 
     <div className="container post-body ">
@@ -44,7 +53,7 @@ function Viewpost() {
                 
                 <div >
                   <div className='postbody-title'>
-                    <h5>{value.name}</h5>@<p>{value.username}</p>
+                    <h5>{value.name}</h5>@<p>{value.username}</p><p> {datetohours(value.updatedAt)}h</p>
                   </div>
                   <div className='myfeeds'>
                   <p>{value.Feed}</p>

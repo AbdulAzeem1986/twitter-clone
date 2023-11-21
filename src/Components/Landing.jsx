@@ -8,7 +8,7 @@ function Landing() {
   // const [showSignIn, setShowSignIn] = useState(false);
   let Navigate = useNavigate();
 
-  const sign = () => {
+  const signInTapped = () => {
     Navigate("/signin")
   }
 
@@ -16,7 +16,7 @@ function Landing() {
     <div className="container">
       <div className="row">
         <div className="col col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 logo mt-5">
-          <img style={{ width: "60%"}} src={Logo} alt='logo' />
+          <img style={{ width: "60%" }} src={Logo} alt='logo' />
         </div>
 
         <div className="col col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 mt-5">
@@ -33,7 +33,7 @@ function Landing() {
             <p className='clause'>By signing up, you agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.</p>
 
             <p>Already have an account?</p>
-            <button onClick={sign} className='btn signin-button text-primary button'>Sign in</button>
+            <button onClick={signInTapped} className='btn signin-button text-primary button'>Sign in</button>
           </div>
         </div>
       </div>

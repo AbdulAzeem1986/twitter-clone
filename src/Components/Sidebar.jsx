@@ -21,6 +21,7 @@ function Sidebar() {
     sessionStorage.removeItem("token");
     sessionStorage.removeItem("userId");
     sessionStorage.removeItem("username");
+    sessionStorage.removeItem("name");
 
     Navigate("/")
   }
