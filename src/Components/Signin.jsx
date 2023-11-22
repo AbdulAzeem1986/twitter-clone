@@ -27,7 +27,7 @@ function Signin() {
     )
   };
 
-  const ddd = async () => {
+  const signin = async () => {
 
     validate(data).then(()=>{
       Navigate("/home")
@@ -106,7 +106,7 @@ function Signin() {
             </div>
 
             <div className="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 mt-4">
-              <button onClick={ddd} className="btn bg-dark bg-opacity-75 text-light" style={{ width: '100%' }}>Login</button>
+              <button onClick={signin} className="btn bg-dark bg-opacity-75 text-light" style={{ width: '100%' }}>Login</button>
             </div>
             <div className='mt-5'>
               <p>Don't have an account? <a href="#">Signup</a></p>

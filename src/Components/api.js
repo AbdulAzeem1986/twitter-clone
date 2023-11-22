@@ -1,27 +1,27 @@
 import axios from 'axios';
 
-const BASE_URL = 'http://localhost:3001'; // Adjust this based on your API base URL
+const BASE_URL = 'http://localhost:3001'; // Adjust this based on your API base URL 
 
 const api = axios.create({
   baseURL: BASE_URL,
 });
 
-const handleResponse = (response) => {
-  if (response.data.status === 'success') {
-    return response;
-  } else {
-    throw new Error(response.data.message || 'API request failed');
-  }
-};
+// const handleResponse = (response) => {
+//   if (response.data.status === 'success') {
+//     return response;
+//   } else {
+//     throw new Error(response.data.message || 'API request failed');
+//   }
+// };
 
-const signIn = async (data) => {
-    try {
-      const response = await api.post('/signin', data);
-      return handleResponse(response);
-    } catch (error) {
-      throw error;
-    }
-  };
+// const signIn = async (data) => {
+//     try {
+//       const response = await api.post('/signin', data);
+//       // return handleResponse(response);
+//     } catch (error) {
+//       throw error;
+//     }
+//   };
 
   export const validate = async (data) => {
 

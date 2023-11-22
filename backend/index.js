@@ -4,6 +4,7 @@ const cors = require("cors");
 const mongoose = require("mongoose");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
+require('dotenv').config(); // Load environment variables from .env file
 const {Usermodel}= require("./models/Usermodel");
 const {Feedmodel}=require("./models/Feedmodel")
 
@@ -12,7 +13,11 @@ const app = new express;
 app.use(bodyparser.json());
 app.use(cors());
 
-mongoose.connect("mongodb+srv://abdulazeem:abdulazeem86@cluster0.qch7vjx.mongodb.net/tweets?retryWrites=true&w=majority",{useNewUrlParser:true})
+
+
+const { MONGODB_URI } = process.env;
+
+mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
 
 
 //Api to Signin
@@ -136,10 +141,19 @@ app.post("/viewpost", async(req,res)=>{
     })
 
 
-app.listen(3001, (err)=>{
-    if (err) {
-        console.log("Some error occured");
-    } else {
-        console.log("The server is running");
-    }
-});
+    app.listen(process.env.PORT, (err) => {
+        if (err) {
+            console.log("Some error occured");
+        } else {
+            console.log(`Server is running on the PORT ${process.env.PORT}`);
+        }
+    });
+    
+
+// app.listen(3001, (err)=>{
+//     if (err) {
+//         console.log("Some error occured");
+//     } else {
+//         console.log("The server is running");
+//     }
+// });
