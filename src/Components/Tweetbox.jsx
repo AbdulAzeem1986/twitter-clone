@@ -7,7 +7,7 @@ import FormatListBulletedSharpIcon from '@material-ui/icons/FormatListBulletedSh
 import SentimentSatisfiedOutlinedIcon from '@material-ui/icons/SentimentSatisfiedOutlined';
 import ScheduleOutlinedIcon from '@material-ui/icons/ScheduleOutlined';
 import RoomOutlinedIcon from '@material-ui/icons/RoomOutlined';
-
+import {api} from "./api"
 import axios from 'axios';
 
 function Tweetbox() {
@@ -36,7 +36,7 @@ function Tweetbox() {
       userId: sessionStorage.getItem("userId"),
       Feed: feed
     }
-    axios.post("http://localhost:3001/addpost", data)
+    api.post("/addpost", data)
       .then((response) => {
         console.log(response.data)
         if (response.data.Status == "Post added successfully") {

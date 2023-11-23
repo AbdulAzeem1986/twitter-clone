@@ -1,18 +1,17 @@
 import React, { useEffect, useState } from 'react'
 import "./Viewpost.css";
-import axios from 'axios';
 import ChatBubbleOutlineRoundedIcon from '@material-ui/icons/ChatBubbleOutlineRounded';
 import FavoriteBorderRoundedIcon from '@material-ui/icons/FavoriteBorderRounded';
 import EqualizerTwoToneIcon from '@material-ui/icons/EqualizerTwoTone';
 import BookmarkBorderOutlinedIcon from '@material-ui/icons/BookmarkBorderOutlined';
 import PublishOutlinedIcon from '@material-ui/icons/PublishOutlined';
-
+import { api } from './api';
 
 
 function Viewpost() {
 
   var [post, setPost] = useState([]);
-  const [newPostAdded, setNewPostAdded] = useState(false);
+  // const [newPostAdded, setNewPostAdded] = useState(false);
 
   useEffect(() => {
     postview()
@@ -22,9 +21,9 @@ function Viewpost() {
 
     var data = { "userId": sessionStorage.getItem("userId") };
     try {
-      const response = await axios.post("http://localhost:3001/viewpost", data);
+      const response = await api.post("/viewpost", data)
       setPost(response.data);
-      setNewPostAdded(!newPostAdded)
+      // setNewPostAdded(!newPostAdded)
       console.log(response.data);
       console.log(post);
     } catch (err) {
@@ -32,14 +31,14 @@ function Viewpost() {
     }
   };
 
-  const datetohours= (dateString)=>{
-    const timestamp = dateString;
-const dateObject = new Date(timestamp);
+  //   const datetohours= (dateString)=>{
+  //     const timestamp = dateString;
+  // const dateObject = new Date(timestamp);
 
-// Extracting time portion (hours, minutes, seconds)
-const hours = dateObject.getUTCHours();
-return hours
-  }
+  // // Extracting time portion (hours, minutes, seconds)
+  // const hours = dateObject.getUTCHours();
+  // return hours
+  //   }
 
   return (
 
@@ -50,22 +49,22 @@ return hours
 
             {post.map((value, index) => {
               return <div className="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 post-items">
-                
+
                 <div >
                   <div className='postbody-title'>
-                    <h5>{value.name}</h5>@<p>{value.username}</p><p> {datetohours(value.updatedAt)}h</p>
+                    <h5>{value.name}</h5>@<p>{value.username}</p>
                   </div>
                   <div className='myfeeds'>
-                  <p>{value.Feed}</p>
-                  <div className='icons'>
-                  <div className='feeds-icon'><ChatBubbleOutlineRoundedIcon fontSize='inherit'/></div>
-                  <div className='feeds-icon'><FavoriteBorderRoundedIcon fontSize='inherit'/></div>
-                  <div className='feeds-icon'><EqualizerTwoToneIcon fontSize='inherit'/></div>
-                  <div className='feeds-icon'><BookmarkBorderOutlinedIcon fontSize='inherit'/></div>
-                  <div className='feeds-icon'><PublishOutlinedIcon fontSize='inherit'/></div>
+                    <p>{value.Feed}</p>
+                    <div className='icons'>
+                      <div className='feeds-icon'><ChatBubbleOutlineRoundedIcon fontSize='inherit' /></div>
+                      <div className='feeds-icon'><FavoriteBorderRoundedIcon fontSize='inherit' /></div>
+                      <div className='feeds-icon'><EqualizerTwoToneIcon fontSize='inherit' /></div>
+                      <div className='feeds-icon'><BookmarkBorderOutlinedIcon fontSize='inherit' /></div>
+                      <div className='feeds-icon'><PublishOutlinedIcon fontSize='inherit' /></div>
 
 
-                  </div>
+                    </div>
                   </div>
                 </div>
               </div>
